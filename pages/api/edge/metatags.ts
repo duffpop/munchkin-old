@@ -5,7 +5,7 @@ import { ratelimit, recordMetatags } from "@/lib/upstash";
 import { getToken } from "next-auth/jwt";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 export default async function handler(req: NextRequest, ev: NextFetchEvent) {
@@ -45,7 +45,7 @@ const getHtml = async (url: string) => {
   return await fetch(url, {
     signal: controller.signal,
     headers: {
-      "User-Agent": "dub-bot/1.0",
+      "User-Agent": "munchkin-bot/1.0",
     },
   }).then((res) => {
     clearTimeout(timeoutId);

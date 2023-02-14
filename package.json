@@ -79,6 +79,7 @@
     "@types/topojson-client": "^3.1.1",
     "array-to-ndjson": "^1.0.1",
     "autoprefixer": "^10.4.13",
+    "clsx": "^1.2.1",
     "mailing": "^0.9.1",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",

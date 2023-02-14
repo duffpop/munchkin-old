@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { getStats } from "@/lib/stats";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 export default async function handler(req: NextRequest) {

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-import cx from "classnames";
+import clsx from "clsx";
 
 const Switch = ({
   fn,
@@ -22,7 +22,7 @@ const Switch = ({
       defaultChecked={checked}
       onCheckedChange={(checked) => fn(checked)}
       disabled={disabled}
-      className={cx(
+      className={clsx(
         disabled
           ? "cursor-not-allowed bg-gray-200"
           : "cursor-pointer radix-state-checked:bg-blue-500 radix-state-unchecked:bg-gray-200",
@@ -31,7 +31,7 @@ const Switch = ({
       )}
     >
       <SwitchPrimitive.Thumb
-        className={cx(
+        className={clsx(
           `radix-state-checked:${thumbTranslate}`,
           "radix-state-unchecked:translate-x-0",
           `pointer-events-none ${thumbDimensions} transform ${thumbTranslate} rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`,

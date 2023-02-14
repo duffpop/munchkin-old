@@ -1,6 +1,5 @@
 import BlurImage from "@/components/shared/blur-image";
 import {
-  ExternalLink,
   Facebook,
   LinkedIn,
   LoadingCircle,

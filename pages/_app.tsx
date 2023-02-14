@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import "@/styles/globals.css";
-import cx from "classnames";
+import clsx from "clsx";
 import localFont from "@next/font/local";
 import { Inter } from "@next/font/google";
 
@@ -26,7 +26,7 @@ function MyApp({
 }: AppProps<{ session: Session }>) {
   return (
     <SessionProvider session={session}>
-      <main className={cx(satoshi.variable, inter.variable)}>
+      <main className={clsx(satoshi.variable, inter.variable)}>
         <Component {...pageProps} />
       </main>
       <Analytics />
