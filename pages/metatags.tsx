@@ -7,11 +7,8 @@ import {
   Tick,
   Twitter,
 } from "@/components/shared/icons";
-import getTweetsMetadata from "@/lib/twitter";
-import Tweet from "@/components/shared/tweet";
 import { useMemo, useState } from "react";
 import Background from "@/components/shared/background";
-import Meta from "@/components/layout/meta";
 import { useDebounce } from "use-debounce";
 import { fetcher, getDomainWithoutWWW, getUrlFromString } from "@/lib/utils";
 import useSWR from "swr";
@@ -177,28 +174,7 @@ export default function Metatags({ tweets }: { tweets: any }) {
           <Github className="h-4 w-4" />
           <p>View the source code</p>
         </a>
-
-        <div className="text-left">
-          {tweets.map((tweet) => (
-            <Tweet
-              key={tweet.id}
-              id={tweet.id}
-              metadata={JSON.stringify(tweet)}
-            />
-          ))}
-        </div>
       </div>
     </HomeLayout>
   );
-}
-
-export async function getStaticProps() {
-  const tweets = await getTweetsMetadata(["1595465648938930180"]);
-
-  return {
-    props: {
-      tweets,
-    },
-    revalidate: 10,
-  };
 }

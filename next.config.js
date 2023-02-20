@@ -11,6 +11,10 @@ module.exports = {
       "pbs.twimg.com",
     ],
   },
+  transpilePackages: ["@visx/scale"],
+  experimental: {
+    esmExternals: "loose",
+  },
   async headers() {
     return [
       {
